@@ -1,9 +1,10 @@
 html,
 body {
+  background: linear-gradient(to right, #00AAFF, #00FF6C);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
 }
 
 a {
@@ -13,4 +14,29 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.flex-item-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#main {
+  min-height: 91vh;
+}
+
+/** Footer **/
+
+#footer {
+  bottom: 0;
+  background-color: transparent;
+  color: #ffffff;
+  height: 60px;
+  position: relative;
+  width: 100%;
+}
+
+#heart-text {
+  color: #fd0303;
 }
