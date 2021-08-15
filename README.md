@@ -61,50 +61,38 @@ npm i
 
 You can start the app locally or run it on a development environment using the following commands:
 
-- **Start app locally**
+- `npm start`
 
-```
-npm start
-```
+**Start app locally**
 
-- **Run on a local dev environment**
+- `npm run dev`
 
-```
-npm run dev
-```
+**Run on a local dev environment**
 
 ## Available Scripts
 
 Most available scripts are NextJS built-in scripts but the most useful ones are:
 
-- **Start app**
+- `npm start`
 
-```
-npm start
-```
+**Start app**
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
 The page will refresh if you make edits to the code.
 You will also see any compile and lint errors in the console.
 
-- **Start app using a dev environment**
+- `npm run dev`
 
-```
-npm run dev
-```
+**Start app using a dev environment**
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
 The page will refresh if you make edits to the code.
 You will also see any compile and lint errors in the console.
 
-- **Check app for lint errors**
+- `npm run lint`
 
-```
-npm run lint
-```
+**Check app for lint errors**
 
-- **Build the app locally**
+- `npm run build`
 
-```
-npm run build
-```
+**Build the app locally**
