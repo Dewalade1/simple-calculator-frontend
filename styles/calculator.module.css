@@ -1,3 +1,22 @@
 #calcBody {
     width: 400px;
 }
+
+.largeBtn {
+    width: 200px !important;
+}
+
+#prevOperand {
+    color: #c4c4c4;
+    font-size: 1.5rem;
+    height: 40%;
+    padding: 7px;
+}
+
+#currentOperand {
+    color: #ffffff;
+    font-size: 2.5rem;
+    height: 60%;
+    padding: 7px;
+    opacity: 1;
+}

@@ -10,10 +10,10 @@ const Calculator = () => {
     <div className="flex-items-center">
       <div id={styles.calcBody}>
         <Display>
-          <div></div>
-          <div></div>
+          <div id={styles.prevOperand}> 123 + </div>
+          <div id={styles.currentOperand}>256</div>
         </Display>
-        <Button> AC </Button>
+        <Button className={styles.largeBtn}> AC </Button>
         <Button> DEL </Button>
         <Button> / </Button>
         <Button> 1 </Button>
@@ -30,7 +30,7 @@ const Calculator = () => {
         <Button> - </Button>
         <Button> . </Button>
         <Button> 0 </Button>
-        <Button> = </Button>
+        <Button className={styles.largeBtn}> = </Button>
       </div>
     </div>
   );
