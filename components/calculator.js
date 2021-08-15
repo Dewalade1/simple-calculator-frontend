@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import * as math from "mathjs"
 
 import styles from "../styles/calculator.module.css";
 
@@ -14,6 +13,29 @@ const Calculator = () => {
         operator: undefined
     });
 
+    const getDisplayValue = (number) => {
+
+        const stringValue = number.toString();
+        const integerValue = parseFloat(stringValue.split('.')[0]);
+        const decimalValue = stringValue.split('.')[1];
+        let integerDisplay = "";
+        console.log(number)
+
+        if (isNaN(integerValue)) {
+            integerDisplay = "";
+        } else {
+            integerDisplay = integerValue.toLocaleString('en', { 
+                maximumFractionDigits: 0
+            })
+        };
+
+        if (decimalValue === undefined ) {
+            return integerDisplay;
+        } else {
+            return `${integerDisplay}.${decimalValue}`;
+        }
+    }
+
     const ClearDisplay = () => {
         setState({
           currentOperand: "",
@@ -27,9 +49,12 @@ const Calculator = () => {
       const value = e?.target.getAttribute("value");
 
       if (value === '.' && state.currentOperand.includes('.')) return
+
+      let newValue = `${state.currentOperand}${value}`;
+
       setState((prev) => ({
         ...prev,
-        currentOperand: prev.currentOperand.toString() + value,
+        currentOperand: newValue,
       }));
     };
 
@@ -78,7 +103,7 @@ const Calculator = () => {
 
       setState({
         prevOperand: "",
-        currentOperand: result.toString(),
+        currentOperand: getDisplayValue(result.toString()),
         operation: undefined,
       });
     };
