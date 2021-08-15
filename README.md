@@ -11,18 +11,15 @@
 
 * I built the app based on the `Kahoot` website design: [Link to website](https://kahoot.it/)
 * I used feature branches and pull requests in this Project
-    * [Example PRs](https://github.com/Dewalade1/20-questions-game-frontend/pulls?q=is%3Apr+is%3Aclosed)
-    * [Example Branches](https://github.com/Dewalade1/20-questions-game-frontend/branches)
-* I worked documented and fixed bugs using GitHub Issues: [Example Issues](https://github.com/Dewalade1/20-questions-game-frontend/issues)
+    * [Example PRs](https://github.com/Dewalade1/simple-calculator-frontend/pulls?q=is%3Apr+is%3Aclosed)
+    * [Example Branches](https://github.com/Dewalade1/simple-calculator-frontend/branches)
+* I worked documented and fixed bugs using GitHub Issues: [Example Issues](https://github.com/Dewalade1/simple-calculator-frontend/issues)
 
 ## Why I built the Project this way
 
-* I didn't use a state management library like Redux on purpose. For this app `useState` and `useReducer` hooks were sufficient. I realized that more and more projects don't use Redux anymore since GraphQL or react-query are often used for data management.
+- I didn't use a state management library like Redux on purpose. For this app `useState` and `useReducer` hooks were sufficient. I realized that more and more projects don't use Redux anymore since GraphQL or react-query are often used for data management.
 
-* UI libraries are a great place to find ready-made components that help speed up the dev process. They can also be handy if one only needs a few cusom components. For these reasons, I used `Styled-Componends` to create and style the buttons, inputs and cards used in this project.
-
-* My plan is to become a FullStack Engineer eventually. This is why I chose to build a Custom RESTful API Server which can be found [here](https://github.com/Dewalade1/20-questions-game-backend). I built this API using the expressJS framework in NodeJS.
-
+- UI libraries are a great place to find ready-made components that help speed up the dev process. They can also be handy if one only needs a few cusom components. For these reasons, I used `Styled-Componends` to create and style the buttons, inputs and cards used in this project.
 
 ## How to setup the app
 
@@ -37,13 +34,13 @@ Alternatively, you can do the following to setup the app locally. Run the comman
 1 Clone the repo using this command
 
 ```
-git clone https://github.com/Dewalade1/20-questions-game-frontend.git
+git clone https://github.com/Dewalade1/simple-calculator-frontend.git
 ```
 
 2. Change directory to the repo folder
 
 ```
-cd <path-to-repository>/20-questions-game-frontend
+cd <path-to-repository>/simple-calculator-frontend
 ```
 
 3. Install the dependencies using npm
@@ -58,7 +55,7 @@ npm i
 
 ### Option 1
 
-- The easiest way to start up the app is to [click here](http://20-questions-game-frontend.vercel.app/)
+- The easiest way to start up the app is to [click here](https://simple-calculator-frontend.vercel.app/)
 
 ### Option 2
 
