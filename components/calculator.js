@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import math from "mathjs"
 
 import styles from "../styles/calculator.module.css";
 
@@ -6,31 +7,114 @@ import Button from "../utils/buttons";
 import Display from "../utils/display";
 
 const Calculator = () => {
+
+    const [ state, setState ] = useState({
+        currentOperand: '',
+        prevOperand: '',
+        operator: undefined
+    });
+
+    const ClearDisplay = () => {
+        setState({
+          currentOperand: "",
+          prevOperand: "",
+          operator: undefined,
+        });
+    }
+
+    const AppendValue = (e) => {
+      const value = e?.target.getAttribute("value");
+
+      if (value === '.' && state.currentOperand.includes('.')) return
+      setState((prev) => ({
+        ...prev,
+        currentOperand: prev.currentOperand.toString() + value,
+      }));
+    };
+
+    const SelectOperation = () => {}
+
+    const EvaluateResults = () => {}
+
   return (
     <div className="flex-items-center">
       <div id={styles.calcBody}>
         <Display>
-          <div id={styles.prevOperand}> 123 + </div>
-          <div id={styles.currentOperand}>256</div>
+          <div id={styles.prevOperand}> {state.prevOperand} </div>
+          <div id={styles.currentOperand}>{state.currentOperand} </div>
         </Display>
-        <Button className={styles.largeBtn}> AC </Button>
-        <Button> DEL </Button>
-        <Button> / </Button>
-        <Button> 1 </Button>
-        <Button> 2 </Button>
-        <Button> 3 </Button>
-        <Button> x </Button>
-        <Button> 4 </Button>
-        <Button> 5 </Button>
-        <Button> 6 </Button>
-        <Button> + </Button>
-        <Button> 7 </Button>
-        <Button> 8 </Button>
-        <Button> 9 </Button>
-        <Button> - </Button>
-        <Button> . </Button>
-        <Button> 0 </Button>
-        <Button className={styles.largeBtn}> = </Button>
+        <Button className={styles.largeBtn} onClick={ClearDisplay}>
+          {" "}
+          AC{" "}
+        </Button>
+        <Button name="Del" value="del">
+          {" "}
+          DEL{" "}
+        </Button>
+        <Button name="/" value="/" onClick={SelectOperation}>
+          {" "}
+          /{" "}
+        </Button>
+        <Button name="1" value="1" onClick={AppendValue}>
+          {" "}
+          1{" "}
+        </Button>
+        <Button name="2" value="2" onClick={AppendValue}>
+          {" "}
+          2{" "}
+        </Button>
+        <Button name="3" value="3" onClick={AppendValue}>
+          {" "}
+          3{" "}
+        </Button>
+        <Button name="x" value="*" onClick={SelectOperation}>
+          {" "}
+          x{" "}
+        </Button>
+        <Button name="4" value="4" onClick={AppendValue}>
+          {" "}
+          4{" "}
+        </Button>
+        <Button name="5" value="5" onClick={AppendValue}>
+          {" "}
+          5{" "}
+        </Button>
+        <Button name="6" value="6" onClick={AppendValue}>
+          {" "}
+          6{" "}
+        </Button>
+        <Button name="+" value="+" onClick={SelectOperation}>
+          {" "}
+          +{" "}
+        </Button>
+        <Button name="7" value="7" onClick={AppendValue}>
+          {" "}
+          7{" "}
+        </Button>
+        <Button name="8" value="8" onClick={AppendValue}>
+          {" "}
+          8{" "}
+        </Button>
+        <Button name="9" value="9" onClick={AppendValue}>
+          {" "}
+          9{" "}
+        </Button>
+        <Button name="-" value="-" onClick={SelectOperation}>
+          {" "}
+          -{" "}
+        </Button>
+        <Button name="." value="." onClick={AppendValue}>
+          {" "}
+          .{" "}
+        </Button>
+        <Button name="0" value="0" onClick={AppendValue}>
+          {" "}
+          0{" "}
+        </Button>
+        <Button name="equals" onClick={EvaluateResults} className={styles.largeBtn}>
+          {" "}
+          ={" "}
+        </Button>
       </div>
     </div>
   );
