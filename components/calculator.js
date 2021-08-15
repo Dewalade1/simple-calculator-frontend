@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import math from "mathjs"
+import * as math from "mathjs"
 
 import styles from "../styles/calculator.module.css";
 
@@ -23,6 +23,7 @@ const Calculator = () => {
     }
 
     const AppendValue = (e) => {
+
       const value = e?.target.getAttribute("value");
 
       if (value === '.' && state.currentOperand.includes('.')) return
@@ -32,9 +33,62 @@ const Calculator = () => {
       }));
     };
 
-    const SelectOperation = () => {}
+    const SelectOperation = (e) => {
 
-    const EvaluateResults = () => {}
+      const value = e?.target.getAttribute("value");
+      if (state.currentOperand === "") return
+
+      if (state.prevOperand !== "") {
+        EvaluateResults()
+      }
+
+      setState((prev) => ({
+        currentOperand: "",
+        prevOperand: prev.currentOperand.toString() + value.toString(),
+        operation: value,
+      }));
+
+    };
+
+    const EvaluateResults = () => {
+
+      let result
+      let prev = parseFloat(state.prevOperand)
+      let current = parseFloat(state.currentOperand)
+
+      if (isNaN(prev) || isNaN(current)) return
+
+      switch (state.operation) {
+          case "+":
+            result = prev + current
+            break;
+          case "-":
+            result = prev - current;
+            break;
+          case "*":
+            result = prev * current;
+            break;
+          case "/":
+            result = prev / current;
+            break;
+          default:
+            break;
+
+      }
+
+      setState({
+        prevOperand: "",
+        currentOperand: result.toString(),
+        operation: undefined,
+      });
+    };
+
+    const DeleteValue = () => {
+        setState((prev) => ({
+          ...prev,
+          currentOperand: prev.currentOperand.toString().slice(0, -1),
+        }));
+    }
 
   return (
     <div className="flex-items-center">
@@ -47,7 +101,7 @@ const Calculator = () => {
           {" "}
           AC{" "}
         </Button>
-        <Button name="Del" value="del">
+        <Button name="Del" value="del" onClick={DeleteValue}>
           {" "}
           DEL{" "}
         </Button>
