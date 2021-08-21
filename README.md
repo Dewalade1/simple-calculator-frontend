@@ -1,9 +1,5 @@
 # Simple Calculator Frontend
 
-## Contents
-
-[TOC]
-
 ## Tools used
 
 - [ReactJS](https://reactjs.org) - to build the app
